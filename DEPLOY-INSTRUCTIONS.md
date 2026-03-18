@@ -1,225 +1,144 @@
-# AIR Deployment - Super Simple Setup
+# AIR Deployment Instructions
 
-> **Deploy AIR in 10 minutes to any web hosting**
+Simple deployment guide for the AIR protocol.
 
-## What You Need
+## Requirements
 
-1. **Web hosting** with subdomain support
-2. **`air.yourdomain.com`** subdomain pointing to your hosting  
-3. **2 files** from this repository
+1. Web hosting with subdomain support
+2. Subdomain configuration: `air.yourdomain.com`
+3. Two files from this repository
 
 ## Files to Deploy
 
-Copy exactly these 2 files to your `air.yourdomain.com` directory:
+Upload these files to your `air.yourdomain.com` directory:
 
-1. **`index.html`** - The AIR parser (handles all requests)
-2. **`data.md`** - Your business data (markdown format)
+1. **`index.html`** - AIR protocol parser
+2. **`data.md`** - Your business information in markdown format
 
-**That's it. No PHP, no database, no complex setup.**
+No server-side processing required.
 
----
+## Step 1: Configure Subdomain
 
-## Step 1: Create Subdomain
+### Standard Hosting Control Panel:
+1. Access hosting control panel (cPanel, Plesk, etc.)
+2. Navigate to **Subdomains**
+3. Create `air` subdomain pointing to new directory
+4. Result: `air.yourbusiness.com` → `/public_html/air/`
 
-### Most Hosting Providers:
-1. Login to hosting control panel (cPanel, Plesk, etc.)
-2. Go to **Subdomains** 
-3. Create **`air`** subdomain pointing to new folder
-4. Example: `air.yourbusiness.com` → `/public_html/air/`
-
-### DNS Only Setup:
-If you control DNS directly:
+### DNS Configuration:
 ```
 air.yourbusiness.com  CNAME  yourbusiness.com
 ```
 
----
-
 ## Step 2: Upload Files
 
-### Via FTP/SFTP:
+### FTP/SFTP Upload:
 ```bash
-# Upload to your air subdomain folder
-scp index.html user@yourhost.com:/path/to/air.yourbusiness.com/
-scp data.md user@yourhost.com:/path/to/air.yourbusiness.com/
+scp index.html user@host.com:/path/to/air.yourbusiness.com/
+scp data.md user@host.com:/path/to/air.yourbusiness.com/
 ```
 
-### Via Hosting File Manager:
-1. Open file manager in hosting control panel
-2. Navigate to air subdomain folder  
+### File Manager Upload:
+1. Access hosting file manager
+2. Navigate to air subdomain directory
 3. Upload `index.html` and `data.md`
-4. Done!
 
-### Via Git (Advanced):
-```bash
-git clone https://github.com/hegerIT/air.git
-cp air/index.html /path/to/air.yourbusiness.com/
-cp air/data.md /path/to/air.yourbusiness.com/
-```
+## Step 3: Configure Business Data
 
----
-
-## Step 3: Customize Your Data
-
-Edit **`data.md`** with your business information:
+Edit `data.md` with your business information using the provided template structure:
 
 ```markdown
-# Your Business Name
-
-## Kontakt
-- **Telefon:** +49 XXX XXXXX
-- **Email:** info@yourbusiness.com
+## Contact
+- Company: Your Business Name
+- Phone: +1-555-123-4567
+- Email: contact@yourbusiness.com
 
 ## Services  
-### Main Service
-- **Price:** €100/hour
-- **Description:** What you do
-- **Availability:** Mon-Fri 9-17
+- Service 1: Description and pricing
+- Service 2: Description and pricing
+
+## Location
+- Address: Street Address
+- City: Your City
+- Country: Your Country
 ```
 
-**Use the same `## Section` format as the heger.IT example.**
+## Step 4: Verification
 
----
+Test the following endpoints:
 
-## Step 4: Test Your AIR
+- `https://air.yourbusiness.com/` (discovery)
+- `https://air.yourbusiness.com/?contact` (contact information)
+- `https://air.yourbusiness.com/?services` (service catalog)
 
-### Quick Tests:
-```bash
-# Discovery
-curl https://air.yourbusiness.com/
+Verify JSON responses contain your business data.
 
-# Contact
-curl https://air.yourbusiness.com/?contact
-
-# Services  
-curl https://air.yourbusiness.com/?services
-```
-
-### Browser Test:
-Visit in browser:
-- `https://air.yourbusiness.com/` 
-- `https://air.yourbusiness.com/?contact`
-
-You should see JSON responses with your business data.
-
----
-
-## Step 5: AI Test
-
-Ask ChatGPT, Claude, or Siri:
-> "What services does [Your Business] offer? Check air.yourbusiness.com"
-
-**If AI can read your data → YOU'RE IN THE AI ECONOMY! 🚀**
-
----
-
-## Common Hosting Platforms
-
-### Shared Hosting (cPanel):
-1. **Subdomain** → Create `air` subdomain
-2. **File Manager** → Upload 2 files  
-3. **Done** ✅
+## Platform-Specific Instructions
 
 ### GitHub Pages:
-1. **Repository** → Create `air.yourbusiness.com` repo
-2. **Settings** → Enable GitHub Pages
-3. **Upload** → `index.html` + `data.md`  
-4. **Custom Domain** → Point `air.yourbusiness.com`
+1. Create repository: `air.yourbusiness.com`
+2. Enable GitHub Pages in repository settings
+3. Upload `index.html` and `data.md`
+4. Configure custom domain: `air.yourbusiness.com`
 
 ### Netlify:
-1. **Deploy** → Drag & drop folder with 2 files
-2. **Domain** → Add `air.yourbusiness.com` 
-3. **Done** ✅
+1. Deploy via drag-and-drop with the two files
+2. Configure custom domain: `air.yourbusiness.com`
 
-### Vercel:
-```bash
-npm i -g vercel
-vercel --name air-yourbusiness
-vercel --domains air.yourbusiness.com
-```
-
----
+### Shared Hosting (cPanel):
+1. Create `air` subdomain via Subdomains section
+2. Upload files via File Manager
+3. Verify subdomain accessibility
 
 ## Troubleshooting
 
-### ❌ "Site not found"
-- Check subdomain DNS (can take 1-24 hours)
-- Verify subdomain points to correct folder
-- Check file names are exactly `index.html` and `data.md`
+### Domain Resolution Issues:
+- Verify subdomain DNS configuration
+- Allow 1-24 hours for DNS propagation
+- Confirm subdomain points to correct directory
 
-### ❌ "No data returned" 
-- Verify `data.md` has `## Section` headers
-- Check markdown syntax (no broken formatting)
-- Test locally: open `index.html?contact` in browser
+### File Access Problems:
+- Verify file names: `index.html` and `data.md`
+- Check file permissions (readable by web server)
+- Confirm files are in subdomain root directory
 
-### ❌ "CORS errors"
-- Most hosting works automatically
-- If problems: add this to `.htaccess`:
-  ```apache
-  Header add Access-Control-Allow-Origin "*"
-  ```
+### Data Format Issues:
+- Verify `data.md` uses proper markdown syntax
+- Ensure section headers use `## Format`
+- Test locally by opening `index.html?contact` in browser
 
-### ❌ "AI can't read my site"
-- Test manually with `curl` first
-- Verify JSON output format
-- Check that `air.*` subdomain is live
-
----
-
-## Performance Tips
-
-### Fast Loading:
-- ✅ Files are already optimized (< 50KB total)
-- ✅ No database queries  
-- ✅ Client-side parsing = instant responses
-
-### SEO (Optional):
-Add to `index.html` `<head>`:
-```html
-<meta name="description" content="AI-readable business data">
-<meta name="robots" content="noindex,follow">
+### CORS Configuration:
+Most hosting platforms handle this automatically. If needed, add to `.htaccess`:
+```apache
+Header add Access-Control-Allow-Origin "*"
 ```
 
-### Analytics (Optional):
-Add Google Analytics to track AI usage:
-```html
-<!-- Standard GA code in <head> -->
-```
+## Maintenance
+
+### Data Updates:
+1. Edit `data.md` locally or via repository
+2. Upload updated file to server
+3. Changes are effective immediately
+
+### Monitoring:
+- Monitor server logs for AIR endpoint requests
+- Track usage patterns from AI systems
+- Update data based on usage feedback
+
+## Performance Considerations
+
+- Total file size: < 50KB
+- No database dependencies
+- Client-side processing for optimal response time
+- Standard HTTP caching applies
+
+## Security Notes
+
+- AIR endpoints serve public business information
+- No authentication required for basic business data
+- Private information should not be included in `data.md`
+- Standard web security practices apply
 
 ---
 
-## Updating Your Data
-
-### Method 1: Direct Edit
-1. Edit `data.md` locally
-2. Upload to server  
-3. Changes live immediately
-
-### Method 2: Git Workflow  
-1. Edit in GitHub repository
-2. Pull changes to server
-3. Or use automatic deployment hooks
-
-### Method 3: CMS Integration
-*(Coming soon: WordPress plugin, etc.)*
-
----
-
-## What's Next?
-
-1. **⭐ Star this repository** - Show support!
-2. **Share your AIR URL** - Tell AI community  
-3. **Join the ecosystem** - Help define the standard
-4. **Monitor usage** - Track AI assistant requests
-
----
-
-**🎉 CONGRATULATIONS!**
-
-Your business is now discoverable by AI assistants worldwide.
-
-Welcome to the AI economy! 🚀
-
----
-
-*Need help? Open an [issue](https://github.com/hegerIT/air/issues) or contact via air.heger.it*
+For questions or issues, refer to the project documentation or submit an issue via the repository.
