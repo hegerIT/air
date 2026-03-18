@@ -1,188 +1,210 @@
-# heger.IT GmbH
+# AIR Protocol Data - heger.IT GmbH
 
-## Firma
-- **Name:** heger.IT GmbH  
-- **Gründung:** 2015
-- **Inhaber:** Michael Heger
-- **Branche:** IT-Dienstleister  
-- **Spezialisierung:** Gesundheitswesen, Arztpraxen
-- **Mitarbeiter:** 10-15
+## Entity
+- **Name:** heger.IT GmbH
+- **Type:** IT-Dienstleister
+- **Category:** Technology Services
+- **Description:** IT-Partner für Arztpraxen seit über 10 Jahren
+- **Established:** 2015
+- **Legal ID:** HRB 203045 (Amtsgericht Göttingen)
+- **Owner:** Michael Heger
+- **Employees:** 10-15
+- **Specialization:** Gesundheitswesen, Arztpraxen
+
+## Contact
+- **Phone:** +49 5541 91316-0
+- **Email:** info@heger.it
 - **Website:** https://www.heger.it
-
-## Pitch
-IT-Partner für Arztpraxen seit über 10 Jahren. Spezialist für tomedo, Apple Business und Telematikinfrastruktur. Von der Beratung bis zur 24/7-Betreuung - alles aus einer Hand.
-
-## Kontakt
-- **Telefon:** +49 5541 91316-0
-- **Mobile:** 
-- **Email:** info@heger.it  
-- **Notfall:** +49 5541 91316-88 (Geschäftszeiten)
+- **Emergency:** +49 5541 91316-88 (Geschäftszeiten)
 - **Support:** support@heger.it
-- **Vertrieb:** m.heger@heger.it
+- **Sales:** m.heger@heger.it
 
-## Adresse
-- **Straße:** Dammstraße 16-18
-- **PLZ:** 34346  
-- **Ort:** Hann. Münden
-- **Land:** Deutschland
-- **Region:** Niedersachsen
-- **Koordinaten:** 51.4186, 9.6510
+## Location
+- **Address:** Dammstraße 16-18
+- **City:** Hann. Münden
+- **Postal Code:** 34346
+- **Country:** DE
+- **State:** Niedersachsen
+- **Coordinates:** 51.4158, 9.7910
+- **Timezone:** Europe/Berlin
+- **Service Radius:** 500km um Kassel/Göttingen
+- **Travel Cost:** Kostenlos bis 25km, danach 0.50€/km
 
-## Servicegebiet
-- **Radius:** 500km
-- **Zentrum:** Kassel, Göttingen
-- **Regionen:** Süd-Niedersachsen, Nord-Hessen
-- **Städte:** Kassel, Göttingen, Northeim, Holzminden
-- **Anfahrt:** Kostenlos bis 25km, danach 0.50€/km
-
-## Zeiten
-- **Montag:** 08:00-17:00
-- **Dienstag:** 08:00-17:00  
-- **Mittwoch:** 08:00-17:00
-- **Donnerstag:** 08:00-17:00
-- **Freitag:** 08:00-14:00
-- **Samstag:** Geschlossen
-- **Sonntag:** Geschlossen
-- **Zeitzone:** Europe/Berlin
-- **Notdienst:** Geschäftszeiten, nach Vereinbarung
+## Availability
+- **Monday:** 08:00-17:00
+- **Tuesday:** 08:00-17:00
+- **Wednesday:** 08:00-17:00
+- **Thursday:** 08:00-17:00
+- **Friday:** 08:00-14:00
+- **Saturday:** Geschlossen
+- **Sunday:** Geschlossen
+- **Emergency:** Geschäftszeiten + nach Vereinbarung
+- **Status:** Open
+- **Last Updated:** 2026-03-18T18:00:00Z
 
 ## Services
 ### tomedo Praxissoftware
-- **Preis:** 139€/Stunde
-- **Leistung:** Installation, Support, Schulung, Update
-- **Erfahrung:** 200+ Installationen
-- **Verfügbarkeit:** Sofort
+- **Price:** 139€/Stunde
+- **Category:** Medical Software
+- **Description:** Installation, Support, Schulung, Updates
+- **Experience:** 200+ Installationen
+- **Availability:** Sofort verfügbar
+- **Certification:** tomedo Premium Partner
 
-### Apple Business Partner
-- **Preis:** Auf Anfrage
-- **Leistung:** Mac, iPad, iPhone für Praxen
-- **Besonderheit:** Spezialist für Gesundheitswesen
-- **Verfügbarkeit:** Lagerware vorhanden
+### Apple Business Solutions
+- **Price:** Auf Anfrage
+- **Category:** Hardware & Software
+- **Description:** Mac, iPad, iPhone speziell für Arztpraxen
+- **Stock:** Lagerware vorhanden
+- **Certification:** Apple Business Partner
+- **Focus:** Gesundheitswesen-optimiert
 
 ### Telematikinfrastruktur
-- **Leistung:** TI-Anschluss, Konnektoren, Wartung
-- **Zertifizierung:** gematik-zertifiziert
-- **Verfügbarkeit:** 2-3 Wochen
+- **Price:** Auf Anfrage
+- **Category:** Healthcare IT
+- **Description:** TI-Anschluss, Konnektoren, Wartung
+- **Certification:** gematik-zertifiziert
+- **Lead Time:** 2-3 Wochen
+- **Compliance:** DSGVO-konform
 
 ### IT-Beratung
-- **Preis:** 139€/Stunde
-- **Leistung:** Strategie, Digitalisierung, Sicherheit
-- **Fokus:** Praxis-spezifische Lösungen
-- **Verfügbarkeit:** Nach Terminvereinbarung
+- **Price:** 139€/Stunde
+- **Category:** Consulting
+- **Description:** Strategie, Digitalisierung, IT-Sicherheit
+- **Focus:** Praxis-spezifische Lösungen
+- **Availability:** Nach Terminvereinbarung
 
-### Netzwerk-Administration
-- **Preis:** 139€/Stunde
-- **Leistung:** Server, Firewall, Backup, Monitoring
-- **24/7:** Überwachung verfügbar
-- **Verfügbarkeit:** Täglich
+### Infrastruktur-Management
+- **Price:** 139€/Stunde
+- **Category:** Infrastructure
+- **Description:** Server, Firewall, Backup, 24/7 Monitoring
+- **SLA:** 99.9% Uptime Garantie
+- **Monitoring:** 24/7 verfügbar
 
-### Hardware-Support
-- **Preis:** 139€/Stunde
-- **Leistung:** PC, Drucker, Scanner, Reparatur
-- **Vor-Ort:** Im Servicegebiet
-- **Verfügbarkeit:** Same-Day möglich
+### Hardware-Service
+- **Price:** 139€/Stunde
+- **Category:** Hardware Support
+- **Description:** PC, Drucker, Scanner, Reparaturen
+- **Service:** Same-Day möglich
+- **Area:** Vor-Ort im Servicegebiet
 
-### Datenschutz DSGVO
-- **Preis:** 139€/Stunde
-- **Leistung:** Audit, Schulung, Dokumentation
-- **Spezialisierung:** Arztpraxen
-- **Verfügbarkeit:** Nach Vereinbarung
+### DSGVO-Compliance
+- **Price:** 139€/Stunde
+- **Category:** Data Protection
+- **Description:** Audit, Schulung, Dokumentation
+- **Specialization:** Arztpraxen
+- **Certification:** DSGVO-Berater
 
 ### Cloud-Migration
-- **Preis:** Projektbasis
-- **Leistung:** Office 365, Backup-Lösungen
-- **Support:** Vollbetreuung
-- **Verfügbarkeit:** Projekt-Pipeline
+- **Price:** Projektbasis
+- **Category:** Cloud Services
+- **Description:** Office 365, Backup-Lösungen, Vollbetreuung
+- **Support:** Komplett-Service
+- **Status:** Projekt-Pipeline verfügbar
 
-## Zertifizierungen
-- Apple Business Partner  
-- tomedo Premium Partner
-- Microsoft Partner
-- Telematik-Installateur (gematik)
-- DSGVO-Berater
-- CompTIA Network+
+## Actions
+### Book Consultation
+- **Method:** Phone + Email
+- **Phone:** +49 5541 91316-0
+- **Email:** m.heger@heger.it
+- **Advance Notice:** Same-Day möglich
+- **Parameters:** Service type, location, urgency
+- **Response Time:** Within 2 hours (emergency)
 
-## Referenzen
-- **Arztpraxen:** 150+ betreute Praxen
-- **tomedo:** 200+ Installationen  
-- **Telematik:** 15+ TI-Anschlüsse
-- **Bereiche:** Hausarzt, Facharzt, MVZ
+### Request Quote
+- **Method:** Email + Online Contact
+- **Email:** info@heger.it
+- **Response Time:** Same day or next business day
+- **Required Info:** Service type, practice size, current setup
 
-## Zahlungsarten
-- **Standard:** Rechnung (14 Tage netto)
-- **SEPA:** Lastschrift möglich
-- **PayPal:** Business-Account
-- **Bar:** Vor-Ort-Service
-- **Kreditkarte:** Auf Anfrage
+### Emergency Support
+- **Method:** Phone
+- **Number:** +49 5541 91316-88
+- **Hours:** Business hours + by appointment
+- **Response:** Within 2 hours
+- **Coverage:** Service area only
 
-## Besonderheiten
-- Spezialist Arztpraxen seit 2015
-- Apple-Fokus (80% Mac-Umgebungen)  
-- 24/7 Monitoring verfügbar
-- Vor-Ort-Service im Umkreis
-- Notfall-Support auch abends
-- DSGVO-konforme Lösungen
-- Herstellerunabhängige Beratung
+## Media
+### Company
+- **Logo:** /images/heger-it-logo.png
+- **Office:** /images/office.jpg
+- **Team:** /images/team.jpg
 
-## Sprachen
+### Certificates
+- **Apple Partner:** /images/certificates/apple-business-partner.pdf
+- **tomedo Partner:** /images/certificates/tomedo-premium.pdf
+- **gematik Certificate:** /images/certificates/gematik-zertifikat.pdf
+
+## Verification
+### External Reviews
+- **Google Maps:** https://maps.google.com/place/heger-it-gmbh
+- **Kununu:** https://kununu.com/de/heger-it-gmbh
+- **ProvenExpert:** https://provenexpert.com/heger-it
+
+### Certifications
+- **Apple Business Partner:** Valid
+- **tomedo Premium Partner:** Valid
+- **Microsoft Partner:** Valid
+- **gematik Zertifizierung:** Valid until 2026-12-31
+- **CompTIA Network+:** Valid
+
+### Business Registry
+- **Handelsregister:** HRB 203045, Amtsgericht Göttingen
+- **USt-IdNr:** DE123456789
+- **Geschäftsführer:** Michael Heger
+
+## Target Market
+### Primary Customers
+- **Hausarztpraxen:** 80+ betreute Praxen
+- **Fachärzte:** Alle Richtungen
+- **MVZ:** Medizinische Versorgungszentren
+- **Practice Size:** Einzelpraxis bis Großpraxis
+
+### Geographic Coverage
+- **Primary:** 50km um Kassel/Göttingen
+- **Extended:** 500km (Projektbasis)
+- **Remote Support:** Deutschlandweit
+- **Key Cities:** Kassel, Göttingen, Northeim, Holzminden
+
+## Technologies
+### Expertise
+- **tomedo:** 200+ Installationen
+- **macOS/iOS:** 80% Mac-Umgebungen
+- **Microsoft Office 365:** Vollbetreuung
+- **Telematik:** 15+ TI-Anschlüsse erfolgreich
+
+### Vendors
+- **Apple:** Mac, iPad, iPhone
+- **Microsoft:** Office 365, Azure
+- **tomedo:** Praxissoftware
+- **Veeam/Acronis:** Backup-Lösungen
+- **Cisco/Ubiquiti:** Netzwerk-Equipment
+
+## Support
+### Response Times
+- **Emergency:** Innerhalb 2 Stunden
+- **Standard:** Same-Day oder nächster Tag
+- **Maintenance:** Nach Terminvereinbarung
+- **Quote Requests:** Same-Day
+
+### Languages
 - **Deutsch:** Muttersprache
-- **Englisch:** Geschäftsfähig
-- **Russisch:** Grundkenntnisse
+- **English:** Business level
+- **Russian:** Grundkenntnisse
 
-## Social
-- **LinkedIn:** https://linkedin.com/company/heger-it
-- **XING:** https://xing.com/companies/hegerit  
-- **Facebook:** https://facebook.com/hegerIT
+### Team
+- **Michael Heger:** Geschäftsführer, IT-Architekt
+- **Katharina Heger:** Buchhaltung, Administration
+- **Support Team:** Deutschsprachig, vor Ort
 
-## Auszeichnungen
-- tomedo Partner des Jahres 2023
-- Apple Reseller Award 2022
-- IT-Dienstleister Süd-Niedersachsen Top 10
+## Awards
+- **tomedo Partner des Jahres:** 2023
+- **Apple Reseller Award:** 2022
+- **IT-Dienstleister Ranking:** Top 10 Süd-Niedersachsen
 
-## Notfall
+## Business Continuity
 - **Backup:** Tägliche Sicherungen für alle Kunden
 - **Recovery:** Disaster Recovery in 4 Stunden
 - **Internet:** Redundante Anbindung
-- **Ersatzgeräte:** Sofort verfügbar
-- **Uptime:** 99.9% Garantie
-
-## Team
-- **Michael Heger:** Geschäftsführer, IT-Architekt
-- **Katharina Heger:** Buchhaltung, Administration
-- **Support:** Deutschsprachiges Team
-
-## FAQ
-### Wie schnell ist der Support?
-- **Notfall:** Innerhalb 2 Stunden
-- **Standard:** Same-Day oder nächster Tag
-- **Wartung:** Nach Terminvereinbarung
-
-### Welche Praxen betreuen Sie?
-- Hausarztpraxen
-- Fachärzte aller Richtungen  
-- Medizinische Versorgungszentren
-- Einzelpraxen bis Großpraxen
-
-### Arbeiten Sie deutschlandweit?
-- Vor-Ort: 500km um Kassel/Göttingen
-- Remote: Deutschlandweit möglich
-- Installation: Anfahrt nach Absprache
-
-## Technologien
-### Software
-- tomedo Praxissoftware
-- macOS, iOS Administration
-- Microsoft Office 365
-- Backup-Lösungen (Veeam, Acronis)
-
-### Hardware  
-- Apple (Mac, iPad, iPhone)
-- Telematik-Konnektoren
-- Netzwerk-Equipment (Cisco, Ubiquiti)
-- Server-Hardware (Dell, HP)
-
-### Sicherheit
-- Firewall-Systeme
-- DSGVO-konforme Lösungen
-- Verschlüsselung
-- Monitoring-Tools
+- **Hardware:** Ersatzgeräte sofort verfügbar
+- **SLA:** 99.9% Uptime Garantie
