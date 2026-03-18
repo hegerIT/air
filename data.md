@@ -6,7 +6,7 @@
 - **Inhaber:** Michael Heger
 - **Branche:** IT-Dienstleister  
 - **Spezialisierung:** Gesundheitswesen, Arztpraxen
-- **Mitarbeiter:** 5-10
+- **Mitarbeiter:** 10-15
 - **Website:** https://www.heger.it
 
 ## Pitch
