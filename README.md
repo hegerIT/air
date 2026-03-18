@@ -1,241 +1,165 @@
-# 🚀 AIR - The Universal AI Protocol
+# AIR - AI Readable Protocol
 
-> **THE FUTURE OF WEB IS HERE. Every website needs AIR subdomain - NOW.**
+> **A universal standard for AI-accessible business information**
 
-## 🔥 Why Every Business Needs AIR TODAY
+## Overview
 
-**The Internet is BROKEN for AI.** While humans clicked through websites for 30 years, AI assistants can't efficiently access business information. 
+AIR provides a standardized, structured interface for AI systems to access business information. Instead of parsing complex HTML or inconsistent data formats, AI assistants can query standardized endpoints to retrieve reliable business data.
 
-**YOUR CUSTOMERS are already asking AI assistants:**
-- "Find me a dentist nearby"  
-- "Book a table at an Italian restaurant"
-- "Who can fix my Mac in this area?"
+## The Challenge
 
-**If your business isn't AI-readable, you're INVISIBLE to the AI economy.**
+Current websites are optimized for human visitors, creating barriers for AI systems:
+- Inconsistent data structures across sites
+- Complex HTML parsing requirements  
+- Limited machine-readable business information
+- No standard interface for AI-business communication
 
----
+## The Solution
 
-## 💡 THE AIR REVOLUTION
-
-**AIR makes every website speak AI language.**
-
-Instead of this broken workflow:
-```
-Human → AI Assistant → Scrapes random HTML → Guesses → Wrong info
-```
-
-AIR enables this:
-```
-Human → AI Assistant → air.yourbusiness.com → Perfect data → Instant action
-```
-
----
-
-## ⚡ INSTANT IMPACT EXAMPLE
-
-**Before AIR:** "Alexa, find me IT support for my medical practice"
-- Searches 10 different websites  
-- Gets inconsistent information
-- Can't book appointments
-- Frustrating experience
-
-**With AIR:** "Alexa, find me IT support for my medical practice"  
-- Queries `air.heger.it?services=medical`
-- Gets exact specialization, pricing, availability
-- Books consultation directly
-- **Done in 5 seconds.**
-
----
-
-## 🎯 THE AIR STANDARD (NON-NEGOTIABLE)
-
-### 🔑 RULE #1: air.* SUBDOMAIN IS MANDATORY
-- `air.yourbusiness.com` 
-- `air.restaurant-name.de`
-- `air.lawfirm.co.uk`
-
-**WHY?** AI assistants must know WHERE to look. `air.*` is the universal signal.
-
-### 🔑 RULE #2: DISCOVERY-FIRST DESIGN
-```bash
-GET air.yourbusiness.com/
-→ Shows what you offer (contact, services, booking, etc.)
-
-GET air.yourbusiness.com/?contact  
-→ Phone, email, address - instantly
-
-GET air.yourbusiness.com/?services=emergency
-→ Emergency services only
-
-GET air.yourbusiness.com/?book
-→ Direct booking API endpoint
-```
-
-### 🔑 RULE #3: STRUCTURED DATA ONLY
-No more HTML parsing hell. Pure JSON responses that AI can consume instantly.
-
----
-
-## 🚨 THE URGENCY: AI ECONOMY IS HERE NOW
-
-**STATS THAT MATTER:**
-- **2026**: 40% of web traffic is already AI agents
-- **2027**: 70% of business discovery happens via AI assistants  
-- **2028**: Websites without AIR are as dead as businesses without websites in 2010
-
-**YOU HAVE 6 MONTHS** before your competitors implement AIR and steal your AI-driven customers.
-
----
-
-## 🎯 WHO NEEDS AIR? EVERYONE.
-
-### Restaurants 🍕
-```bash
-air.pizza-mario.com/?menu=vegan
-air.pizza-mario.com/?book=tonight-7pm-4persons  
-air.pizza-mario.com/?delivery=postal-code-12345
-```
-
-### Medical Practices 🏥  
-```bash
-air.dr-smith.com/?specialties=cardiology
-air.dr-smith.com/?appointments=next-week
-air.dr-smith.com/?insurance=aetna-bluecross
-```
-
-### Law Firms ⚖️
-```bash
-air.lawfirm.com/?practice-areas=divorce
-air.lawfirm.com/?consultation=family-law
-air.lawfirm.com/?rates=hourly
-```
-
-### ANY Business 🏢
-```bash
-air.yourbusiness.com/?contact
-air.yourbusiness.com/?services
-air.yourbusiness.com/?availability
-```
-
----
-
-## 💎 LIVE DEMO: PROOF OF CONCEPT
-
-**🔗 TRY RIGHT NOW:** https://air.heger.it
+AIR establishes a simple, query-based protocol using standard web technologies:
 
 ```bash
-# See what's available
+# Discover available information
+GET https://air.yourbusiness.com/
+
+# Request specific data
+GET https://air.yourbusiness.com/?contact
+GET https://air.yourbusiness.com/?services
+GET https://air.yourbusiness.com/?availability
+```
+
+## Core Principles
+
+### 1. Discovery-First Architecture
+Every AIR endpoint provides metadata about available capabilities without requiring specific queries.
+
+### 2. Parameterized Access
+Clients can request specific information types, reducing bandwidth and processing overhead.
+
+### 3. Structured Responses
+All data is returned in consistent JSON format optimized for programmatic consumption.
+
+### 4. Standard Subdomain Convention
+Business information is accessible at `air.yourdomain.com`, providing predictable discovery paths.
+
+## Implementation
+
+### Minimal Requirements
+- Standard web hosting
+- Two files: `index.html` (parser) and `data.md` (business information)
+- Subdomain configuration: `air.yourdomain.com`
+
+### Example Endpoints
+```bash
+# Business discovery
 curl https://air.heger.it/
+→ Returns business type, capabilities, and summary information
 
-# Get contact info
+# Contact information  
 curl https://air.heger.it/?contact
+→ Returns phone, email, address, and communication preferences
 
-# Find tomedo services
+# Service catalog
 curl https://air.heger.it/?services=tomedo
+→ Returns filtered services matching the specified keyword
 ```
 
-**THIS IS THE FUTURE.** Real business, real data, instant AI access.
+## Live Demonstration
+
+**Working Example**: https://air.heger.it
+
+This production implementation demonstrates the complete AIR protocol for a German IT services company specializing in medical practice technology.
+
+## Technical Specification
+
+### Request Format
+- **Base URL**: `https://air.yourdomain.com/`
+- **Parameters**: Standard HTTP query parameters
+- **Methods**: GET requests only
+- **Authentication**: None required for public business information
+
+### Response Format
+- **Content-Type**: `application/json`
+- **Structure**: Consistent key-value pairs
+- **Encoding**: UTF-8
+- **Caching**: Appropriate cache headers for business information
+
+### Standard Parameters
+- `contact` - Contact information and communication channels
+- `services` - Service offerings and capabilities
+- `availability` - Hours of operation and scheduling information
+- `location` - Geographic information and service areas
+- `all` - Complete business information
+
+## Use Cases
+
+### For AI Assistants
+- Reliable business information retrieval
+- Standardized data format across all AIR-enabled businesses
+- Efficient query processing with minimal overhead
+
+### For Businesses
+- Improved discoverability by AI systems
+- Reduced server load through structured data access
+- Future-proof compatibility with emerging AI platforms
+
+### For Developers
+- Consistent API interface across different businesses
+- Predictable response formats for easy integration
+- Standard HTTP semantics and error handling
+
+## Implementation Status
+
+- **Current Version**: 0.1.0
+- **Status**: Production demonstration available
+- **Compatibility**: All standard web hosting platforms
+- **Dependencies**: None (vanilla HTML/JavaScript implementation)
+
+## Getting Started
+
+1. **Set up subdomain**: Configure `air.yourdomain.com`
+2. **Deploy files**: Upload `index.html` and `data.md`
+3. **Customize data**: Edit `data.md` with your business information
+4. **Test endpoints**: Verify JSON responses for key parameters
+
+Detailed deployment instructions are available in [DEPLOY-INSTRUCTIONS.md](DEPLOY-INSTRUCTIONS.md).
+
+## Roadmap
+
+### Short Term
+- Documentation site and developer resources
+- CMS plugins for popular platforms
+- Business data validation tools
+
+### Medium Term  
+- Integration with major AI assistant platforms
+- Extended parameter specifications
+- Community adoption tools
+
+### Long Term
+- Industry-specific protocol extensions
+- Business directory and discovery services
+- Advanced interaction capabilities
+
+## Contributing
+
+AIR development follows open standards principles. We welcome contributions including:
+- Protocol specification improvements
+- Implementation examples
+- Integration tools and libraries
+- Documentation enhancements
+
+## Support
+
+- **Documentation**: See included specification and deployment guides
+- **Issues**: GitHub Issues for bug reports and feature requests
+- **Examples**: Live implementation at https://air.heger.it
+- **Community**: Discussion and feedback via GitHub
+
+## License
+
+MIT License - Open for commercial and non-commercial use.
 
 ---
 
-## ⚡ SETUP AIR IN 10 MINUTES
-
-### 1. Create air.yourdomain.com subdomain
-Point to your web hosting (anywhere).
-
-### 2. Deploy two files:
-- `index.php` or `index.html` (AIR parser)  
-- `data.md` (your business data)
-
-### 3. Test with curl:
-```bash
-curl air.yourdomain.com/
-```
-
-### 4. You're in the AI economy!
-AI assistants can now find and interact with your business.
-
----
-
-## 🔮 THE NETWORK EFFECT
-
-**When 1,000 businesses adopt AIR:**  
-AI assistants become more useful
-
-**When 10,000 businesses adopt AIR:**  
-AIR becomes the standard way AI discovers businesses
-
-**When 100,000 businesses adopt AIR:**  
-Businesses WITHOUT AIR become invisible
-
-**Which side of history do you want to be on?**
-
----
-
-## 🚧 CURRENT STATUS
-
-- **Version**: 0.1.0 (Production-ready proof)
-- **Live Demo**: https://air.heger.it  
-- **GitHub Stars**: **[BE THE FIRST TO STAR ⭐]**
-- **Businesses Using AIR**: Starting now
-
----
-
-## 🚀 ROADMAP: WORLD DOMINATION
-
-### Phase 1 (Q1 2026): Foundation ✅
-- ✅ Core specification  
-- ✅ Live demo (air.heger.it)
-- ✅ GitHub repository
-
-### Phase 2 (Q2 2026): Tools 🔧
-- [ ] AIR Generator (enter business info → instant AIR site)
-- [ ] WordPress/CMS plugins  
-- [ ] Domain registrar partnerships for `air.*` subdomains
-
-### Phase 3 (Q3 2026): Ecosystem 📈
-- [ ] AI assistant integrations (Siri, Alexa, Google)
-- [ ] Business directory of AIR sites
-- [ ] AIR certification program
-
-### Phase 4 (Q4 2026): Universal Standard 🌍
-- [ ] 10,000+ businesses using AIR
-- [ ] Major AI platforms supporting AIR natively
-- [ ] Industry associations recommending AIR
-
----
-
-## 🎯 CALL TO ACTION
-
-### For Business Owners:
-1. **⭐ STAR this repository** (show AI economy leadership)
-2. **Set up `air.yourbusiness.com`** (get ahead of competition)  
-3. **Spread the word** (network effects benefit everyone)
-
-### For Developers:  
-1. **Contribute to specification**
-2. **Build AIR tools** (generators, plugins, libraries)
-3. **Implement for clients** (be the AIR expert)
-
-### For AI Companies:
-1. **Add AIR support to your assistants**  
-2. **Partner with us** for widespread adoption
-3. **Help define industry standards**
-
----
-
-## 📞 JOIN THE REVOLUTION
-
-- **Demo**: https://air.heger.it  
-- **Issues/Ideas**: GitHub Issues  
-- **Business Inquiries**: Contact via AIR demo 😉
-
----
-
-**AIR: Making every business discoverable by AI, one subdomain at a time.**
-
-⭐ **STAR NOW** if you believe the web should speak AI language!
-
----
-
-*Built by [heger.IT](https://air.heger.it) - Your AI-ready IT partner*
+**AIR Protocol** - Enabling efficient AI-business communication through standardized web interfaces.
