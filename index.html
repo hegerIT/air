@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIR - AI Readable Interface</title>
+    <meta name="description" content="AI Readable business data for heger.IT GmbH">
+    
+    <!-- CORS and caching headers -->
+    <meta http-equiv="Cache-Control" content="public, max-age=3600">
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .api-info {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        .endpoint {
+            font-family: 'Monaco', 'Menlo', monospace;
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        .status {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 6px;
+        }
+        .status.loading { background: #fff3cd; }
+        .status.success { background: #d1edff; }
+        .status.error { background: #f8d7da; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>🤖 AIR Protocol</h1>
+            <p><strong>AI Readable Interface</strong> für strukturierte Business-Daten</p>
+        </div>
+
+        <div class="api-info">
+            <h3>📋 Verfügbare Endpunkte:</h3>
+            <div class="endpoint">GET /</div>
+            <div class="endpoint">GET /?discovery</div>
+            <div class="endpoint">GET /?contact</div>
+            <div class="endpoint">GET /?services</div>
+            <div class="endpoint">GET /?zeiten</div>
+            <div class="endpoint">GET /?adresse</div>
+            <div class="endpoint">GET /?all</div>
+        </div>
+
+        <div id="status" class="status loading">
+            <strong>Status:</strong> Lädt data.md...
+        </div>
+
+        <div id="output">
+            <h3>📄 Rohe Daten werden geladen...</h3>
+        </div>
+    </div>
+
+    <script>
+        class AIRParser {
+            constructor() {
+                this.data = '';
+                this.sections = new Map();
+                this.init();
+            }
+
+            async init() {
+                try {
+                    await this.loadData();
+                    this.parseMarkdown();
+                    this.handleRequest();
+                } catch (error) {
+                    this.showError('Fehler beim Laden der Daten: ' + error.message);
+                }
+            }
+
+            async loadData() {
+                const response = await fetch('./data.md');
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                this.data = await response.text();
+                
+                document.getElementById('status').innerHTML = 
+                    '<strong>Status:</strong> ✅ data.md erfolgreich geladen';
+                document.getElementById('status').className = 'status success';
+            }
+
+            parseMarkdown() {
+                const lines = this.data.split('\n');
+                let currentSection = null;
+                let currentContent = [];
+
+                for (const line of lines) {
+                    if (line.startsWith('## ')) {
+                        // Vorherige Sektion speichern
+                        if (currentSection) {
+                            this.sections.set(currentSection.toLowerCase(), {
+                                title: currentSection,
+                                content: currentContent.join('\n').trim()
+                            });
+                        }
+                        // Neue Sektion starten
+                        currentSection = line.substring(3).trim();
+                        currentContent = [];
+                    } else if (currentSection) {
+                        currentContent.push(line);
+                    }
+                }
+
+                // Letzte Sektion speichern
+                if (currentSection) {
+                    this.sections.set(currentSection.toLowerCase(), {
+                        title: currentSection,
+                        content: currentContent.join('\n').trim()
+                    });
+                }
+            }
+
+            handleRequest() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const params = Array.from(urlParams.keys());
+
+                if (params.length === 0) {
+                    this.showDiscovery();
+                } else if (params.includes('discovery')) {
+                    this.showDiscovery();
+                } else if (params.includes('all')) {
+                    this.showAll();
+                } else {
+                    const param = params[0];
+                    this.showSection(param);
+                }
+            }
+
+            showDiscovery() {
+                const availableSections = Array.from(this.sections.keys());
+                const discovery = {
+                    air_version: "1.0.0",
+                    name: "heger.IT GmbH",
+                    type: "IT-Dienstleister",
+                    description: "IT-Support speziell für Arztpraxen und Gesundheitswesen",
+                    available_sections: availableSections,
+                    capabilities: availableSections,
+                    specialties: ["tomedo", "apple", "telematik", "praxis-it"],
+                    quick_facts: {
+                        location: "Hann. Münden, Deutschland",
+                        established: "2015",
+                        service_radius: "50km um Kassel/Göttingen",
+                        primary_focus: "Arztpraxen"
+                    },
+                    last_updated: new Date().toISOString(),
+                    endpoints: availableSections.map(section => `/?${section}`)
+                };
+
+                this.showJSON(discovery);
+                this.showHumanReadable("Discovery", "Alle verfügbaren Datenendpunkte");
+            }
+
+            showSection(param) {
+                const section = this.sections.get(param.toLowerCase());
+                
+                if (!section) {
+                    this.showError(`Sektion '${param}' nicht gefunden. Verfügbar: ${Array.from(this.sections.keys()).join(', ')}`);
+                    return;
+                }
+
+                const result = {
+                    section: param,
+                    title: section.title,
+                    data: this.parseSection(section.content)
+                };
+
+                this.showJSON(result);
+                this.showHumanReadable(section.title, section.content);
+            }
+
+            showAll() {
+                const allData = {};
+                for (const [key, section] of this.sections) {
+                    allData[key] = {
+                        title: section.title,
+                        data: this.parseSection(section.content)
+                    };
+                }
+
+                this.showJSON(allData);
+                this.showHumanReadable("Alle Daten", "Kompletter Datensatz");
+            }
+
+            parseSection(content) {
+                const lines = content.split('\n');
+                const result = {};
+                let currentSubsection = null;
+
+                for (const line of lines) {
+                    const trimmed = line.trim();
+                    
+                    if (trimmed.startsWith('### ')) {
+                        currentSubsection = trimmed.substring(4);
+                        result[currentSubsection] = {};
+                    } else if (trimmed.startsWith('- **') && trimmed.includes(':**')) {
+                        // Format: - **Key:** Value
+                        const match = trimmed.match(/^- \*\*(.+?):\*\* (.+)$/);
+                        if (match) {
+                            if (currentSubsection) {
+                                result[currentSubsection][match[1]] = match[2];
+                            } else {
+                                result[match[1]] = match[2];
+                            }
+                        }
+                    } else if (trimmed.startsWith('- ') && !trimmed.includes(':**')) {
+                        // Simple list item
+                        const item = trimmed.substring(2);
+                        const listKey = currentSubsection || 'items';
+                        if (!result[listKey]) result[listKey] = [];
+                        if (Array.isArray(result[listKey])) {
+                            result[listKey].push(item);
+                        } else {
+                            result[listKey] = [result[listKey], item];
+                        }
+                    }
+                }
+
+                return result;
+            }
+
+            showJSON(data) {
+                // Set proper headers for API response
+                if (window.location.search) {
+                    // This is an API request - return only JSON
+                    document.head.innerHTML = '<meta http-equiv="Content-Type" content="application/json">';
+                    document.body.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                    return;
+                }
+
+                // Show JSON in the output div for human viewing
+                document.getElementById('output').innerHTML = 
+                    '<h3>📤 JSON Response:</h3><pre>' + 
+                    JSON.stringify(data, null, 2) + 
+                    '</pre>';
+            }
+
+            showHumanReadable(title, content) {
+                if (window.location.search) return; // API mode - only JSON
+
+                document.getElementById('output').innerHTML += 
+                    '<h3>👀 Human Readable:</h3>' +
+                    '<h4>' + title + '</h4>' +
+                    '<div style="background: #f8f9fa; padding: 15px; border-radius: 6px; white-space: pre-line;">' + 
+                    content + 
+                    '</div>';
+            }
+
+            showError(message) {
+                document.getElementById('status').innerHTML = 
+                    '<strong>❌ Fehler:</strong> ' + message;
+                document.getElementById('status').className = 'status error';
+                
+                document.getElementById('output').innerHTML = 
+                    '<h3>❌ Fehler</h3><p>' + message + '</p>';
+            }
+        }
+
+        // Initialize AIR Parser when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new AIRParser();
+        });
+
+        // Handle CORS
+        if (window.location.search) {
+            // Add CORS headers for API requests
+            const meta = document.createElement('meta');
+            meta.httpEquiv = 'Access-Control-Allow-Origin';
+            meta.content = '*';
+            document.head.appendChild(meta);
+        }
+    </script>
+</body>
+</html>
