@@ -26,7 +26,7 @@ IT-Partner für Arztpraxen seit über 10 Jahren. Spezialist für tomedo, Apple B
 - **Ort:** Hann. Münden
 - **Land:** Deutschland
 - **Region:** Niedersachsen
-- **Koordinaten:** 51.4158, 9.7910
+- **Koordinaten:** 51.4186, 9.6510
 
 ## Servicegebiet
 - **Radius:** 500km
