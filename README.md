@@ -1,10 +1,12 @@
 # AIR - AI Readable Protocol
 
-> **A universal standard for AI-accessible business information**
+> **The universal standard for AI-accessible websites**
 
 ## Overview
 
-AIR provides a standardized, structured interface for AI systems to access business information. Instead of parsing complex HTML or inconsistent data formats, AI assistants can query standardized endpoints to retrieve reliable business data.
+AIR makes every website readable by AI assistants. Instead of parsing complex HTML, AI systems access standardized JSON endpoints to retrieve structured information about businesses, services, products, or any website content.
+
+**Every website needs AIR.** As AI assistants replace web browsing, websites without structured data access will become invisible to AI-driven discovery and interaction.
 
 ## The Challenge
 
@@ -126,20 +128,22 @@ Detailed deployment instructions are available in [DEPLOY-INSTRUCTIONS.md](DEPLO
 
 ## Roadmap
 
-### Short Term
-- Documentation site and developer resources
-- CMS plugins for popular platforms
-- Business data validation tools
+### Current Focus
+- **One-click integrations** for popular CMS platforms (WordPress, Shopify, Wix)
+- **Auto-generation tools** to convert existing websites to AIR format
+- **Validation and testing tools** for AIR implementations
 
-### Medium Term  
-- Integration with major AI assistant platforms
-- Extended parameter specifications
-- Community adoption tools
+### Expanding Access
+- **CMS plugins** for instant AIR deployment
+- **Website builder integrations** (Squarespace, Webflow, etc.)
+- **E-commerce platform modules** for product catalogs
+- **Enterprise tools** for large-scale deployments
 
-### Long Term
-- Industry-specific protocol extensions
-- Business directory and discovery services
-- Advanced interaction capabilities
+### Future Vision
+- **AI-to-AI commerce**: Direct bookings, purchases, and transactions
+- **Industry standards**: Healthcare, hospitality, retail-specific extensions  
+- **Global directory**: Discoverable registry of AIR-enabled websites
+- **Advanced interactions**: Real-time availability, dynamic pricing, automated negotiations
 
 ## Contributing
 
