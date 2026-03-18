@@ -13,15 +13,15 @@
 IT-Partner für Arztpraxen seit über 10 Jahren. Spezialist für tomedo, Apple Business und Telematikinfrastruktur. Von der Beratung bis zur 24/7-Betreuung - alles aus einer Hand.
 
 ## Kontakt
-- **Telefon:** +49 5541 123456
-- **Mobile:** +49 171 9876543
+- **Telefon:** +49 5541 91316-0
+- **Mobile:** 
 - **Email:** info@heger.it  
-- **Notfall:** +49 5541 123456 (Geschäftszeiten)
+- **Notfall:** +49 5541 91316-88 (Geschäftszeiten)
 - **Support:** support@heger.it
-- **Vertrieb:** michael.heger@heger.it
+- **Vertrieb:** m.heger@heger.it
 
 ## Adresse
-- **Straße:** Musterstraße 1
+- **Straße:** Dammstraße 16-18
 - **PLZ:** 34346  
 - **Ort:** Hann. Münden
 - **Land:** Deutschland
@@ -29,7 +29,7 @@ IT-Partner für Arztpraxen seit über 10 Jahren. Spezialist für tomedo, Apple B
 - **Koordinaten:** 51.4158, 9.7910
 
 ## Servicegebiet
-- **Radius:** 50km
+- **Radius:** 500km
 - **Zentrum:** Kassel, Göttingen
 - **Regionen:** Süd-Niedersachsen, Nord-Hessen
 - **Städte:** Kassel, Göttingen, Northeim, Holzminden
@@ -40,7 +40,7 @@ IT-Partner für Arztpraxen seit über 10 Jahren. Spezialist für tomedo, Apple B
 - **Dienstag:** 08:00-17:00  
 - **Mittwoch:** 08:00-17:00
 - **Donnerstag:** 08:00-17:00
-- **Freitag:** 08:00-16:00
+- **Freitag:** 08:00-14:00
 - **Samstag:** Geschlossen
 - **Sonntag:** Geschlossen
 - **Zeitzone:** Europe/Berlin
@@ -48,7 +48,7 @@ IT-Partner für Arztpraxen seit über 10 Jahren. Spezialist für tomedo, Apple B
 
 ## Services
 ### tomedo Praxissoftware
-- **Preis:** 85€/Stunde
+- **Preis:** 139€/Stunde
 - **Leistung:** Installation, Support, Schulung, Update
 - **Erfahrung:** 200+ Installationen
 - **Verfügbarkeit:** Sofort
@@ -60,31 +60,30 @@ IT-Partner für Arztpraxen seit über 10 Jahren. Spezialist für tomedo, Apple B
 - **Verfügbarkeit:** Lagerware vorhanden
 
 ### Telematikinfrastruktur
-- **Preis:** 150€ Installation
 - **Leistung:** TI-Anschluss, Konnektoren, Wartung
 - **Zertifizierung:** gematik-zertifiziert
 - **Verfügbarkeit:** 2-3 Wochen
 
 ### IT-Beratung
-- **Preis:** 120€/Stunde
+- **Preis:** 139€/Stunde
 - **Leistung:** Strategie, Digitalisierung, Sicherheit
 - **Fokus:** Praxis-spezifische Lösungen
 - **Verfügbarkeit:** Nach Terminvereinbarung
 
 ### Netzwerk-Administration
-- **Preis:** 95€/Stunde
+- **Preis:** 139€/Stunde
 - **Leistung:** Server, Firewall, Backup, Monitoring
 - **24/7:** Überwachung verfügbar
 - **Verfügbarkeit:** Täglich
 
 ### Hardware-Support
-- **Preis:** 75€/Stunde
+- **Preis:** 139€/Stunde
 - **Leistung:** PC, Drucker, Scanner, Reparatur
 - **Vor-Ort:** Im Servicegebiet
 - **Verfügbarkeit:** Same-Day möglich
 
 ### Datenschutz DSGVO
-- **Preis:** 150€/Stunde
+- **Preis:** 139€/Stunde
 - **Leistung:** Audit, Schulung, Dokumentation
 - **Spezialisierung:** Arztpraxen
 - **Verfügbarkeit:** Nach Vereinbarung
@@ -104,7 +103,7 @@ IT-Partner für Arztpraxen seit über 10 Jahren. Spezialist für tomedo, Apple B
 - CompTIA Network+
 
 ## Referenzen
-- **Arztpraxen:** 50+ betreute Praxen
+- **Arztpraxen:** 150+ betreute Praxen
 - **tomedo:** 200+ Installationen  
 - **Telematik:** 15+ TI-Anschlüsse
 - **Bereiche:** Hausarzt, Facharzt, MVZ
@@ -150,7 +149,6 @@ IT-Partner für Arztpraxen seit über 10 Jahren. Spezialist für tomedo, Apple B
 ## Team
 - **Michael Heger:** Geschäftsführer, IT-Architekt
 - **Katharina Heger:** Buchhaltung, Administration
-- **Techniker:** 3 zertifizierte IT-Spezialisten
 - **Support:** Deutschsprachiges Team
 
 ## FAQ
@@ -166,21 +164,9 @@ IT-Partner für Arztpraxen seit über 10 Jahren. Spezialist für tomedo, Apple B
 - Einzelpraxen bis Großpraxen
 
 ### Arbeiten Sie deutschlandweit?
-- Vor-Ort: 50km um Kassel/Göttingen
+- Vor-Ort: 500km um Kassel/Göttingen
 - Remote: Deutschlandweit möglich
 - Installation: Anfahrt nach Absprache
-
-## Preisliste
-### Standard-Services
-- **Installation tomedo:** 85€/h (meist 4-6h)
-- **Apple Setup:** 75€/h + Hardware
-- **Telematik:** 150€ Pauschale + Komponenten  
-- **Notfall-Support:** 120€/h (mind. 1h)
-
-### Wartungsverträge
-- **Basis:** 50€/Monat (Remote-Support)
-- **Standard:** 120€/Monat (inkl. Vor-Ort)
-- **Premium:** 200€/Monat (24/7 + Garantie)
 
 ## Technologien
 ### Software
