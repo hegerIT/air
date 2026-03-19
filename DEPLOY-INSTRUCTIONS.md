@@ -1,21 +1,23 @@
-# AIR Deployment Instructions
+# AIR Manual Deployment Instructions
 
-Simple deployment guide for the AIR protocol.
+For manual installation without WordPress. **For WordPress sites, use the [WordPress Plugin](wordpress-plugin/INSTALL.md) instead.**
 
 ## Requirements
 
-1. Web hosting with subdomain support
-2. Subdomain configuration: `air.yourdomain.com`
-3. Two files from this repository
+1. Web hosting with PHP 7.4+ support
+2. Subdomain configuration: `air.yourdomain.com`  
+3. Three files from this repository
 
 ## Files to Deploy
 
 Upload these files to your `air.yourdomain.com` directory:
 
-1. **`index.html`** - AIR protocol parser
-2. **`data.md`** - Your business information in markdown format
+1. **`api.php`** - Server-side JSON API (main endpoint)
+2. **`index.html`** - Human-readable fallback interface
+3. **`data.md`** - Your business information in markdown format
+4. **`.htaccess`** - URL routing and headers (optional but recommended)
 
-No server-side processing required.
+Requires PHP 7.4+ for server-side JSON generation.
 
 ## Step 1: Configure Subdomain
 

@@ -17,10 +17,11 @@ Thank you for your interest in contributing to AIR! We want to make this the uni
 - Create tutorials
 
 ### 💻 Code Contributions
-- Server implementations in different languages
-- CMS plugins (WordPress, Drupal, etc.)
-- AI client libraries
-- Testing tools
+- **WordPress Plugin improvements** (our primary distribution channel)
+- CMS plugins for other platforms (Shopify, Drupal, Joomla, etc.)
+- Server implementations in different languages (Node.js, Python, etc.)
+- AI client libraries for easier integration
+- Testing and validation tools
 
 ### 🌍 Community Building
 - Share AIR with others
