@@ -1,0 +1,12 @@
+{
+  "protocol": "AIR",
+  "version": "1.0",
+  "specification": "https://github.com/hegerIT/air/blob/main/SPECIFICATION.md",
+  "endpoints": {
+    "discovery": "/",
+    "api": "/api.php"
+  },
+  "formats": ["json"],
+  "methods": ["GET"],
+  "updated": "2026-03-19T13:10:00Z"
+}
