@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIR Protocol Validator</title>
+    <style>
+        body { font-family: system-ui, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .form-group { margin: 15px 0; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        button { background: #007cba; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #005a87; }
+        .result { margin: 20px 0; padding: 15px; border-radius: 4px; }
+        .success { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+        .error { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .warning { background: #fff3cd; border: 1px solid #ffeaa7; color: #856404; }
+        .test-item { padding: 10px; margin: 5px 0; border-left: 4px solid #ddd; }
+        .test-pass { border-left-color: #28a745; background: #f8fff9; }
+        .test-fail { border-left-color: #dc3545; background: #fff8f8; }
+        .test-warn { border-left-color: #ffc107; background: #fffdf7; }
+    </style>
+</head>
+<body>
+    <h1>🔍 AIR Protocol Validator</h1>
+    <p>Validate your AIR implementation for compatibility and best practices.</p>
+    
+    <div class="form-group">
+        <label for="url">AIR Endpoint URL:</label>
+        <input type="url" id="url" placeholder="https://air.yourdomain.com" value="">
+        <button onclick="validateAIR()">Validate AIR Implementation</button>
+    </div>
+
+    <div id="results"></div>
+
+    <script>
+        async function validateAIR() {
+            const url = document.getElementById('url').value;
+            if (!url) {
+                alert('Please enter a URL');
+                return;
+            }
+
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '<div class="result">🔍 Validating...</div>';
+
+            const tests = [];
+            let overallScore = 0;
+            const maxScore = 10;
+
+            try {
+                // Test 1: Discovery endpoint
+                tests.push(await testDiscovery(url));
+                
+                // Test 2: Well-known endpoint
+                tests.push(await testWellKnown(url));
+                
+                // Test 3: JSON format
+                tests.push(await testJSONFormat(url));
+                
+                // Test 4: CORS headers
+                tests.push(await testCORS(url));
+                
+                // Test 5: Performance
+                tests.push(await testPerformance(url));
+
+                // Calculate score
+                overallScore = tests.reduce((sum, test) => sum + test.score, 0);
+                
+                displayResults(tests, overallScore, maxScore);
+                
+            } catch (error) {
+                resultsDiv.innerHTML = `<div class="result error">❌ Validation failed: ${error.message}</div>`;
+            }
+        }
+
+        async function testDiscovery(baseUrl) {
+            try {
+                const response = await fetch(baseUrl);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                
+                const data = await response.json();
+                
+                if (data.protocol && data.sections && Array.isArray(data.sections)) {
+                    return { name: 'Discovery Endpoint', status: 'pass', score: 3, message: `Found ${data.sections.length} sections` };
+                } else {
+                    return { name: 'Discovery Endpoint', status: 'fail', score: 0, message: 'Invalid discovery response format' };
+                }
+            } catch (error) {
+                return { name: 'Discovery Endpoint', status: 'fail', score: 0, message: error.message };
+            }
+        }
+
+        async function testWellKnown(baseUrl) {
+            try {
+                const wellKnownUrl = new URL('/.well-known/air', baseUrl).toString();
+                const response = await fetch(wellKnownUrl);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.protocol === 'AIR') {
+                        return { name: 'Well-Known Discovery', status: 'pass', score: 2, message: 'AIR protocol declared' };
+                    } else {
+                        return { name: 'Well-Known Discovery', status: 'warn', score: 1, message: 'Well-known exists but invalid format' };
+                    }
+                } else {
+                    return { name: 'Well-Known Discovery', status: 'warn', score: 1, message: 'No /.well-known/air endpoint (optional)' };
+                }
+            } catch (error) {
+                return { name: 'Well-Known Discovery', status: 'warn', score: 1, message: 'Well-known test failed (optional)' };
+            }
+        }
+
+        async function testJSONFormat(baseUrl) {
+            try {
+                const response = await fetch(baseUrl);
+                const contentType = response.headers.get('content-type');
+                
+                if (contentType && contentType.includes('application/json')) {
+                    const data = await response.json();
+                    return { name: 'JSON Format', status: 'pass', score: 2, message: 'Valid JSON with correct Content-Type' };
+                } else {
+                    return { name: 'JSON Format', status: 'warn', score: 1, message: 'JSON valid but missing Content-Type header' };
+                }
+            } catch (error) {
+                return { name: 'JSON Format', status: 'fail', score: 0, message: 'Invalid JSON response' };
+            }
+        }
+
+        async function testCORS(baseUrl) {
+            try {
+                const response = await fetch(baseUrl);
+                const corsHeader = response.headers.get('access-control-allow-origin');
+                
+                if (corsHeader) {
+                    return { name: 'CORS Headers', status: 'pass', score: 1, message: 'CORS properly configured' };
+                } else {
+                    return { name: 'CORS Headers', status: 'warn', score: 0.5, message: 'Missing CORS headers (may block some AI clients)' };
+                }
+            } catch (error) {
+                return { name: 'CORS Headers', status: 'fail', score: 0, message: 'CORS test failed' };
+            }
+        }
+
+        async function testPerformance(baseUrl) {
+            try {
+                const start = Date.now();
+                const response = await fetch(baseUrl);
+                const end = Date.now();
+                const responseTime = end - start;
+                
+                if (responseTime < 500) {
+                    return { name: 'Performance', status: 'pass', score: 2, message: `Fast response: ${responseTime}ms` };
+                } else if (responseTime < 2000) {
+                    return { name: 'Performance', status: 'warn', score: 1, message: `Slow response: ${responseTime}ms` };
+                } else {
+                    return { name: 'Performance', status: 'fail', score: 0, message: `Very slow: ${responseTime}ms` };
+                }
+            } catch (error) {
+                return { name: 'Performance', status: 'fail', score: 0, message: 'Performance test failed' };
+            }
+        }
+
+        function displayResults(tests, score, maxScore) {
+            const percentage = Math.round((score / maxScore) * 100);
+            let overallStatus = 'success';
+            if (percentage < 50) overallStatus = 'error';
+            else if (percentage < 80) overallStatus = 'warning';
+
+            const resultsHTML = `
+                <div class="result ${overallStatus}">
+                    <h3>📊 Overall Score: ${score}/${maxScore} (${percentage}%)</h3>
+                    ${percentage >= 80 ? '✅ Excellent AIR implementation!' : 
+                      percentage >= 50 ? '⚠️ Good implementation with room for improvement' : 
+                      '❌ Implementation needs significant improvements'}
+                </div>
+                <h3>📋 Detailed Test Results</h3>
+                ${tests.map(test => `
+                    <div class="test-item test-${test.status}">
+                        <strong>${test.name}</strong> 
+                        ${test.status === 'pass' ? '✅' : test.status === 'warn' ? '⚠️' : '❌'}
+                        (${test.score} points)
+                        <br><small>${test.message}</small>
+                    </div>
+                `).join('')}
+            `;
+
+            document.getElementById('results').innerHTML = resultsHTML;
+        }
+
+        // Auto-populate with current domain if viewing from AIR site
+        if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+            document.getElementById('url').value = window.location.origin;
+        }
+    </script>
+</body>
+</html>
