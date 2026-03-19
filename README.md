@@ -46,9 +46,15 @@ Business information is accessible at `air.yourdomain.com`, providing predictabl
 
 ## Implementation
 
-### Minimal Requirements
+### Option 1: WordPress Plugin (Recommended)
+- **One-click installation** from WordPress admin
+- **Automatic integration** with WooCommerce, custom post types  
+- **Admin interface** for business data management
+- **Zero configuration** required
+
+### Option 2: Manual Installation  
 - Standard web hosting
-- Two files: `index.html` (parser) and `data.md` (business information)
+- Three files: `api.php` (JSON API), `index.html` (fallback), `data.md` (business data)
 - Subdomain configuration: `air.yourdomain.com`
 
 ### Example Endpoints
@@ -112,26 +118,38 @@ This production implementation demonstrates the complete AIR protocol for a Germ
 
 ## Implementation Status
 
-- **Current Version**: 0.1.0
-- **Status**: Production demonstration available
-- **Compatibility**: All standard web hosting platforms
-- **Dependencies**: None (vanilla HTML/JavaScript implementation)
+- **Current Version**: 1.0.0
+- **Status**: Production ready with WordPress plugin
+- **Compatibility**: WordPress 5.0+, standard web hosting platforms
+- **Dependencies**: PHP 7.4+ for server implementation, WordPress for plugin
 
 ## Getting Started
 
-1. **Set up subdomain**: Configure `air.yourdomain.com`
-2. **Deploy files**: Upload `index.html` and `data.md`
-3. **Customize data**: Edit `data.md` with your business information
-4. **Test endpoints**: Verify JSON responses for key parameters
+### WordPress Sites (90% of websites)
+1. **Install Plugin**: Download and activate the AIR Protocol WordPress plugin
+2. **Configure Data**: Go to Settings → AIR Protocol, fill in business information  
+3. **Test Implementation**: Visit `yoursite.com/air` to verify JSON responses
+4. **Optional**: Set up `air.yoursite.com` subdomain for optimal discovery
 
-Detailed deployment instructions are available in [DEPLOY-INSTRUCTIONS.md](DEPLOY-INSTRUCTIONS.md).
+### Manual Installation
+1. **Deploy Files**: Upload `api.php`, `index.html`, and `data.md` to `air.yourdomain.com`
+2. **Configure Data**: Edit `data.md` with your business information
+3. **Test Endpoints**: Verify JSON responses work correctly
+4. **Validate**: Use the included validator tool
+
+Detailed instructions: [WordPress Plugin Guide](wordpress-plugin/INSTALL.md) | [Manual Deployment](DEPLOY-INSTRUCTIONS.md)
 
 ## Roadmap
 
-### Current Focus
-- **One-click integrations** for popular CMS platforms (WordPress, Shopify, Wix)
-- **Auto-generation tools** to convert existing websites to AIR format
-- **Validation and testing tools** for AIR implementations
+### Current Focus ✅
+- **WordPress Plugin**: Production ready, one-click installation
+- **Validation Tools**: Built-in validator and testing suite  
+- **Server-side JSON**: Real API endpoints, not client-side parsing
+
+### Next Phase
+- **WordPress.org Submission**: Official plugin repository listing
+- **Shopify Integration**: App store plugin for Shopify stores
+- **Agency Partnerships**: Distribution through web development agencies
 
 ### Expanding Access
 - **CMS plugins** for instant AIR deployment
