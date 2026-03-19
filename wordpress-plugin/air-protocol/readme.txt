@@ -3,7 +3,7 @@ Contributors: hegerit
 Tags: ai, json, api, machine-readable, seo, structured-data
 Requires at least: 5.0
 Tested up to: 6.4
-Stable tag: 1.0.0
+Stable tag: 0.1.0
 Requires PHP: 7.4
 License: MIT
 License URI: https://opensource.org/licenses/MIT
@@ -105,7 +105,7 @@ Yes! The admin panel lets you configure contact info, business hours, services, 
 
 == Changelog ==
 
-= 1.0.0 =
+= 0.1.0 =
 * Initial release
 * Core AIR Protocol implementation
 * Admin configuration panel
@@ -115,7 +115,7 @@ Yes! The admin panel lets you configure contact info, business hours, services, 
 
 == Upgrade Notice ==
 
-= 1.0.0 =
+= 0.1.0 =
 Initial release of the AIR Protocol plugin.
 
 == Support ==

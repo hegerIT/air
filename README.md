@@ -118,7 +118,7 @@ This production implementation demonstrates the complete AIR protocol for a Germ
 
 ## Implementation Status
 
-- **Current Version**: 1.0.0
+- **Current Version**: 0.1.0
 - **Status**: Production ready with WordPress plugin
 - **Compatibility**: WordPress 5.0+, standard web hosting platforms
 - **Dependencies**: PHP 7.4+ for server implementation, WordPress for plugin

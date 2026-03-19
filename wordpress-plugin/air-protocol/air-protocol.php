@@ -3,7 +3,7 @@
  * Plugin Name: AIR Protocol
  * Plugin URI: https://github.com/hegerIT/air
  * Description: Makes your WordPress site AI-readable through the AIR (AI Readable) protocol. Provides structured JSON endpoints for AI assistants.
- * Version: 1.0.0
+ * Version: 0.1.0
  * Author: heger.IT GmbH
  * Author URI: https://air.heger.it
  * License: MIT
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Plugin constants
-define('AIR_PROTOCOL_VERSION', '1.0.0');
+define('AIR_PROTOCOL_VERSION', '0.1.0');
 define('AIR_PROTOCOL_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('AIR_PROTOCOL_PLUGIN_URL', plugin_dir_url(__FILE__));
 
@@ -100,7 +100,7 @@ class AIR_Protocol {
             // Discovery mode
             $sections = array_keys($data);
             $response = array(
-                'protocol' => 'AIR v1.0',
+                'protocol' => 'AIR v0.1.0',
                 'domain' => $_SERVER['HTTP_HOST'],
                 'sections' => $sections,
                 'endpoints' => array_map(function($section) {

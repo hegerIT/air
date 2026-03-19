@@ -21,7 +21,7 @@ if (empty($query)) {
     // Discovery endpoint
     $sections = array_keys($data);
     echo json_encode([
-        'protocol' => 'AIR v1.0',
+        'protocol' => 'AIR v0.1.0',
         'domain' => $_SERVER['HTTP_HOST'],
         'sections' => $sections,
         'endpoints' => array_map(function($section) {
